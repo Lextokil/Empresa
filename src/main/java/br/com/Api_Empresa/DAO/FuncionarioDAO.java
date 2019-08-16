@@ -20,7 +20,7 @@ public class FuncionarioDAO {
 	}
 
 	public Long inserir(Funcionario funcionario) throws SQLException, ClassNotFoundException {
-		Long id = null;
+		Long id_funcionario = null;
 		String sqlQuery = "INSERT INTO funcionario (nm_funcionario, sl_funcionario) VALUES (?, ?) ; ";
 
 		try {
@@ -35,11 +35,11 @@ public class FuncionarioDAO {
 			throw e;
 		}
 
-		return id;
+		return id_funcionario;
 	}
 
 	public int alterar(Funcionario funcionario) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "UPDATE funcionario SET nm_funcionario = ?, sl_funcionario = ? WHERE id = ?";
+		String sqlQuery = "UPDATE funcionario SET nm_funcionario = ?, sl_funcionario = ? WHERE id_funcionario = ?";
 		int linhasAfetadas = 0;
 
 		try {
@@ -57,13 +57,13 @@ public class FuncionarioDAO {
 		return linhasAfetadas;
 	}
 
-	public int excluir(long id) throws SQLException, ClassNotFoundException {
+	public int excluir(long id_funcionario) throws SQLException, ClassNotFoundException {
 		int linhasAlfetadas = 0;
-		String sqlQuery = "DELETE FROM funcionario WHERE id = ?";
+		String sqlQuery = "DELETE FROM funcionario WHERE id_funcionario = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setLong(1, id);
+			stmt.setLong(1, id_funcionario);
 			linhasAlfetadas = stmt.executeUpdate();
 			this.conexao.commit();
 		} catch (SQLException e) {
@@ -74,12 +74,12 @@ public class FuncionarioDAO {
 		return linhasAlfetadas;
 	}
 
-	public Funcionario selecionar(long id) throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM funcionario WHERE id = ?";
+	public Funcionario selecionar(long id_funcionario) throws SQLException, ClassNotFoundException {
+		String sqlQuery = "SELECT * FROM funcionario WHERE id_funcionario = ?";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
-			stmt.setLong(1, id);
+			stmt.setLong(1, id_funcionario);
 			ResultSet rs = stmt.executeQuery();
 
 			if (rs.next()) {
@@ -93,7 +93,7 @@ public class FuncionarioDAO {
 	}
 
 	public List<Funcionario> listar() throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM funcionario ORDER BY id";
+		String sqlQuery = "SELECT * FROM funcionario ORDER BY id_funcionario";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
@@ -114,7 +114,7 @@ public class FuncionarioDAO {
 	private Funcionario parser(ResultSet resultSet) throws SQLException {
 		Funcionario c = new Funcionario();
 
-		c.setId_funcionario(resultSet.getLong("id"));
+		c.setId_funcionario(resultSet.getLong("id_funcionario"));
 		c.setNm_funcionario(resultSet.getString("nm_funcionario"));
 		c.setSl_funcionario(resultSet.getDouble("sl_funcionario"));
 
