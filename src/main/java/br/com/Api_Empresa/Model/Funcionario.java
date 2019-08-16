@@ -3,6 +3,10 @@ package br.com.Api_Empresa.Model;
 public class Funcionario {
 	
 	private long id;
+<<<<<<< HEAD
+	private String nm_funcionario;
+	private double sl_funcionario;
+=======
 	private String nmFuncionario;
 	private double tpFuncionario;
 	
@@ -11,6 +15,7 @@ public class Funcionario {
 	
 	
 	
+>>>>>>> e9ecfd7a9a766f3f2c09b37388c6991d8f902c0b
 
 	
 	public long getId_funcionario() {

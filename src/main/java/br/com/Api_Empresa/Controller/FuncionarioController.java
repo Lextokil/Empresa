@@ -16,9 +16,12 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.Api_Empresa.Dao.FuncionarioDAO;
+import br.com.Api_Empresa.DAO.FuncionarioDAO;
 import br.com.Api_Empresa.Model.Funcionario;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5dce00887c6f48e60a8c6505f1b931328ed8cafd
 
 
 
