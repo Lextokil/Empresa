@@ -2,7 +2,7 @@ package br.com.Api_Empresa.Model;
 
 public class Funcionario {
 	
-	private long idFuncionario;
+	private long id;
 	private String nmFuncionario;
 	private double tpFuncionario;
 	
@@ -14,11 +14,11 @@ public class Funcionario {
 
 	
 	public long getId_funcionario() {
-		return idFuncionario;
+		return id;
 	}
 
 	public void setId_funcionario(long id_funcionario) {
-		this.idFuncionario = id_funcionario;
+		this.id = id_funcionario;
 	}
 
 	public String getNm_funcionario() {
@@ -41,7 +41,7 @@ public class Funcionario {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (idFuncionario ^ (idFuncionario >>> 32));
+		result = prime * result + (int) (id ^ (id >>> 32));
 		return result;
 	}
 
@@ -54,7 +54,7 @@ public class Funcionario {
 		if (getClass() != obj.getClass())
 			return false;
 		Funcionario other = (Funcionario) obj;
-		if (idFuncionario != other.idFuncionario)
+		if (id != other.id)
 			return false;
 		return true;
 	}
