@@ -3,8 +3,19 @@ package br.com.Api_Empresa.Model;
 public class Funcionario {
 	
 	private long id;
+<<<<<<< HEAD
 	private String nm_funcionario;
 	private double sl_funcionario;
+=======
+	private String nmFuncionario;
+	private double tpFuncionario;
+	
+	
+	
+	
+	
+	
+>>>>>>> e9ecfd7a9a766f3f2c09b37388c6991d8f902c0b
 
 	
 	public long getId_funcionario() {
@@ -16,19 +27,19 @@ public class Funcionario {
 	}
 
 	public String getNm_funcionario() {
-		return nm_funcionario;
+		return nmFuncionario;
 	}
 
 	public void setNm_funcionario(String nm_funcionario) {
-		this.nm_funcionario = nm_funcionario;
+		this.nmFuncionario = nm_funcionario;
 	}
 
 	public double getSl_funcionario() {
-		return sl_funcionario;
+		return tpFuncionario;
 	}
 
 	public void setSl_funcionario(double sl_funcionario) {
-		this.sl_funcionario = sl_funcionario;
+		this.tpFuncionario = sl_funcionario;
 	}
 
 	@Override
