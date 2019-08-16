@@ -5,12 +5,6 @@ public class Funcionario {
 	private long id;
 	private String nm_funcionario;
 	private double sl_funcionario;
-	
-	
-	
-	
-	
-	
 
 	
 	public long getId_funcionario() {
