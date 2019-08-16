@@ -18,11 +18,6 @@ import javax.ws.rs.core.Response;
 
 import br.com.Api_Empresa.DAO.FuncionarioDAO;
 import br.com.Api_Empresa.Model.Funcionario;
-<<<<<<< HEAD
-
-=======
->>>>>>> 5dce00887c6f48e60a8c6505f1b931328ed8cafd
-
 
 
 @Path("funcionarios")
@@ -44,10 +39,10 @@ public class FuncionarioController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{id}/")
-	public Funcionario getChamado(@PathParam("id") long id) {
+	public Funcionario getChamado(@PathParam("id") long id_funcionario) {
 		try {
 			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
-			return FuncionarioDAO.selecionar(id);
+			return FuncionarioDAO.selecionar(id_funcionario);
 		} catch (Exception ex) {
 			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -61,7 +56,7 @@ public class FuncionarioController {
 		try {
 			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
 			FuncionarioDAO.inserir(funcionario);
-			return Response.status(Response.Status.OK).build();
+			return Response.status(Response.Status.CREATED).build();
 		} catch (Exception ex) {
 			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
 			throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
@@ -86,10 +81,10 @@ public class FuncionarioController {
 	
 	@DELETE
 	@Path("{id}/")
-	public Response delete(@PathParam("id") long id) {
+	public Response delete(@PathParam("id") long id_funcionario) {
 		try {
 			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
-			FuncionarioDAO.excluir(id);
+			FuncionarioDAO.excluir(id_funcionario);
 			return Response.status(Response.Status.OK).build();
 		} catch (Exception ex) {
 			Logger.getLogger(FuncionarioController.class.getName()).log(Level.SEVERE, null, ex);
@@ -99,11 +94,11 @@ public class FuncionarioController {
 	
 	@PUT
 	@Path("{id}/")
-	public Response concluir(@PathParam("id") long id) {
+	public Response concluir(@PathParam("id") long id_funcionario) {
 		try {
 			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
 
-			Funcionario c = FuncionarioDAO.selecionar(id);
+			Funcionario c = FuncionarioDAO.selecionar(id_funcionario);
 			
 
 			FuncionarioDAO.alterar(c);
