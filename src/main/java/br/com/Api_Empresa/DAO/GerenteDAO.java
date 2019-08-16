@@ -1,4 +1,4 @@
-package br.com.Api_Empresa.DAO;
+package br.com.Api_Empresa.Dao;
 
 public class GerenteDAO {
 

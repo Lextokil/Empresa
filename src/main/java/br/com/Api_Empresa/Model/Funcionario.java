@@ -3,29 +3,40 @@ package br.com.Api_Empresa.Model;
 public class Funcionario {
 	
 	private long id;
-	private String nome;
-	private double salario;
+	private String nm_funcionario;
+	private double sl_funcionario;
 	
 	
-	public long getId() {
+	
+	
+	
+	
+
+	
+	public long getId_funcionario() {
 		return id;
 	}
-	public void setId(long id) {
-		this.id = id;
+
+	public void setId_funcionario(long id_funcionario) {
+		this.id = id_funcionario;
 	}
-	public String getNome() {
-		return nome;
+
+	public String getNm_funcionario() {
+		return nm_funcionario;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setNm_funcionario(String nm_funcionario) {
+		this.nm_funcionario = nm_funcionario;
 	}
-	public double getSalario() {
-		return salario;
+
+	public double getSl_funcionario() {
+		return sl_funcionario;
 	}
-	public void setSalario(double salario) {
-		this.salario = salario;
+
+	public void setSl_funcionario(double sl_funcionario) {
+		this.sl_funcionario = sl_funcionario;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -42,7 +53,7 @@ public class Funcionario {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Chamado other = (Chamado) obj;
+		Funcionario other = (Funcionario) obj;
 		if (id != other.id)
 			return false;
 		return true;

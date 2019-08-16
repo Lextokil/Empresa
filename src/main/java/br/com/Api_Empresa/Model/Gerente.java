@@ -1,7 +1,7 @@
 package br.com.Api_Empresa.Model;
 
 public class Gerente extends Funcionario{
-	
+	private long id;
 	private String pwGerente;
 
 	public String getPwGerente() {
@@ -29,7 +29,7 @@ public class Gerente extends Funcionario{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Gerente other = (Grt) obj;
+		Gerente other = (Gerente) obj;
 		if (id != other.id)
 			return false;
 		return true;

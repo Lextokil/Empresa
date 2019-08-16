@@ -1,16 +1,10 @@
 package br.com.Api_Empresa.Model;
 
-public class Programador extends {
-	
+public class Programador extends Funcionario {
+	private long id;
   private String lgProgramador;
 
-public String getStProgramador() {
-	return lgProgramador;
-}
 
-public void setStProgramador(String stProgramador) {
-	this.lgProgramador = stProgramador;
-}
   
 
 }
