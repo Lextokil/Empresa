@@ -18,10 +18,7 @@ import javax.ws.rs.core.Response;
 
 import br.com.Api_Empresa.Dao.FuncionarioDAO;
 import br.com.Api_Empresa.Model.Funcionario;
-import br.com.proway.api.controller.ChamadoController;
-import br.com.proway.api.dao.ChamadoDAO;
-import br.com.proway.api.model.Chamado;
-import br.com.proway.api.model.util.Status;
+
 
 
 
