@@ -1,10 +1,13 @@
 package br.com.Api_Empresa.Model;
 
+import br.com.Api_Empresa.Model.util.TipoFuncionario;
+
 public class Funcionario {
 	
 	private long id_funcionario;
 	private String nm_funcionario;
 	private double sl_funcionario;
+	private TipoFuncionario tp_funcionario;
 	
 	public long getId_funcionario() {
 		return id_funcionario;
@@ -24,6 +27,12 @@ public class Funcionario {
 	public void setSl_funcionario(double sl_funcionario) {
 		this.sl_funcionario = sl_funcionario;
 	}
+	public TipoFuncionario getTp_funcionario() {
+		return tp_funcionario;
+	}
+	public void setTp_funcionario(TipoFuncionario tp_funcionario) {
+		this.tp_funcionario = tp_funcionario;
+	}
 	
 	@Override
 	public int hashCode() {
@@ -34,6 +43,7 @@ public class Funcionario {
 		long temp;
 		temp = Double.doubleToLongBits(sl_funcionario);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((tp_funcionario == null) ? 0 : tp_funcionario.hashCode());
 		return result;
 	}
 	
@@ -55,15 +65,17 @@ public class Funcionario {
 			return false;
 		if (Double.doubleToLongBits(sl_funcionario) != Double.doubleToLongBits(other.sl_funcionario))
 			return false;
+		if (tp_funcionario != other.tp_funcionario)
+			return false;
 		return true;
 	}
 	
 	@Override
 	public String toString() {
 		return "Funcionario [id_funcionario=" + id_funcionario + ", nm_funcionario=" + nm_funcionario
-				+ ", sl_funcionario=" + sl_funcionario + "]";
+				+ ", sl_funcionario=" + sl_funcionario + ", tp_funcionario=" + tp_funcionario + "]";
 	}
-
 	
+
 	
 }
