@@ -2,43 +2,61 @@ package br.com.Api_Empresa.Model;
 
 public class Programador extends Funcionario {
 
-	private long id;
+	private long idProgramador;
 	private String lgProgramador;
 	
-	public long getIdProgramador() {
-		return id;
+	
+	public long getId_programador() {
+		return idProgramador;
 	}
-	public void setIdProgramador(long idProgramador) {
-		this.id = idProgramador;
+	public void setId_programador(long idProgramador) {
+		this.idProgramador = idProgramador;
 	}
-	public String getLgProgramador() {
+	public String getLg_programador() {
 		return lgProgramador;
 	}
-	public void setLgProgramador(String lgProgramador) {
+	public void setLg_programador(String lgProgramador) {
 		this.lgProgramador = lgProgramador;
 	}
+	
 	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
+		int result = super.hashCode();
+		result = prime * result + (int) (idProgramador ^ (idProgramador >>> 32));
+		result = prime * result + ((lgProgramador == null) ? 0 : lgProgramador.hashCode());
 		return result;
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
 		Programador other = (Programador) obj;
-		if (id != other.id)
+		if (idProgramador != other.idProgramador)
+			return false;
+		if (lgProgramador == null) {
+			if (other.lgProgramador != null)
+				return false;
+		} else if (!lgProgramador.equals(other.lgProgramador))
 			return false;
 		return true;
 	}
+	
+	
+
+
+
+
+
+
+
+
+
 
 
 }
