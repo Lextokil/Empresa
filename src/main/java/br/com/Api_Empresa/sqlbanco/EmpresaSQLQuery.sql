@@ -1,26 +1,26 @@
+/* CREATING DATABASE */
+CREATE DATABASE empresa ;
+
+/* SELECT DATABASE FOR THE NEXT COMMANDS */
+USE empresa; 
+
+/* ADD TABLE `FUNCIONARIO` */
 CREATE TABLE funcionario (
-	id_funcionario int(10) not null auto_incremeant primary key,
+	id_funcionario INT(10) not null primary key auto_increment,
 	nm_funcionario VARCHAR(100) not null,
-	sl_funcionario DOUBLE(10,2) not null
-)
+    sl_funcionario DOUBLE(10,2) not null,
+	pw_gerente VARCHAR(50),
+    lg_programador VARCHAR(100),
+    st_mecanico VARCHAR(100),
+    tp_funcionario VARCHAR(50) not null
+) ;
 
-CREATE TABLE gerente (
-    id_gerente int(10) NOT NULL auto_incremeant primary key,
-    id_funcionario int(10) NOT NULL,
-    pw_gerente VARCHAR(50) not null,
-    FOREIGN KEY (id_funcionario) REFERENCES funcionario(id_funcionario)
-)
+/* ADD A FEW EMPLOYEES FOR THE @GET OPERATION */
+INSERT INTO funcionario (nm_funcionario, sl_funcionario, pw_gerente, tp_funcionario)
+				values("Luca Gerentão", 3543.30, "lucalokosenha", "gerente") ;
 
-CREATE TABLE programador (
-    id_programador int(10) NOT NULL auto_incremeant primary key,
-    id_funcionario int(10) NOT NULL,
-    lg_programador VARCHAR(50) not null,
-    FOREIGN KEY (id_funcionario) REFERENCES funcionario(id_funcionario)
-)
-
-CREATE TABLE mecanico (
-    id_mecanico int(10) NOT NULL auto_incremeant primary key,
-    id_funcionario int(10) NOT NULL,
-    st_mecanico VARCHAR(50) not null,
-    FOREIGN KEY (id_funcionario) REFERENCES funcionario(id_funcionario)
-)
+INSERT INTO funcionario (nm_funcionario, sl_funcionario, lg_programador, tp_funcionario)
+				values("Luca Programador", 5540.20, "Java", "programador") ;
+				
+INSERT INTO funcionario (nm_funcionario, sl_funcionario, st_mecanico, tp_funcionario)
+				values("Luca Mecanico", 2540.20, "Empilhadeiras", "mecanico") ;
