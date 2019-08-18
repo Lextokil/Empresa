@@ -22,14 +22,13 @@ public class GerenteDAO {
 
 	public Long inserir(Gerente gerente) throws SQLException, ClassNotFoundException {
 		Long id_gerente = null;
-		String sqlQuery = "INSERT INTO funcionario (nm_funcionario, sl_funcionario, pw_gerente, tp_funcionario) VALUES (?, ?, ?, ?) ;";
+		String sqlQuery = "INSERT INTO funcionario (nm_funcionario, sl_funcionario, pw_gerente, tp_funcionario) VALUES (?, ?, ?, " + "\"gerente\""+ ") ;";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, gerente.getNm_funcionario());
 			stmt.setDouble(2, gerente.getSl_funcionario());
 			stmt.setString(3, gerente.getPw_gerente());
-			stmt.setString(4, gerente.getTp_funcionario().toString());
 
 			stmt.execute();
 			
@@ -99,7 +98,7 @@ public class GerenteDAO {
 	}
 
 	public List<Gerente> listar() throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM funcionario ORDER BY id_funcionario";
+		String sqlQuery = "SELECT * FROM funcionario WHERE tp_funcionario = " + "\"gerente\"" + " ORDER BY id_funcionario";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);

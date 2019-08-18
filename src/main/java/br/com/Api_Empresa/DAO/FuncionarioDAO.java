@@ -9,6 +9,7 @@ import java.util.List;
 import br.com.Api_Empresa.Data.ConexaoJDBC;
 import br.com.Api_Empresa.Data.ConexaoMysqlJDBC;
 import br.com.Api_Empresa.Model.Funcionario;
+import br.com.Api_Empresa.Model.util.TipoFuncionario;
 
 
 public class FuncionarioDAO {
@@ -93,7 +94,7 @@ public class FuncionarioDAO {
 	}
 
 	public List<Funcionario> listar() throws SQLException, ClassNotFoundException {
-		String sqlQuery = "SELECT * FROM funcionario ORDER BY id_funcionario";
+		String sqlQuery = "SELECT * FROM funcionario WHERE 1";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
@@ -117,6 +118,7 @@ public class FuncionarioDAO {
 		c.setId_funcionario(resultSet.getLong("id_funcionario"));
 		c.setNm_funcionario(resultSet.getString("nm_funcionario"));
 		c.setSl_funcionario(resultSet.getDouble("sl_funcionario"));
+		c.setTp_funcionario(TipoFuncionario.valueOf(resultSet.getString("tp_funcionario")));
 
 		return c;
 	}
