@@ -22,12 +22,13 @@ public class FuncionarioDAO {
 
 	public Long inserir(Funcionario funcionario) throws SQLException, ClassNotFoundException {
 		Long id_funcionario = null;
-		String sqlQuery = "INSERT INTO funcionario (nm_funcionario, sl_funcionario) VALUES (?, ?) ; ";
+		String sqlQuery = "INSERT INTO funcionario (nm_funcionario, sl_funcionario, tp_funcionario) VALUES (?, ?, ?) ; ";
 
 		try {
 			PreparedStatement stmt = this.conexao.getConnection().prepareStatement(sqlQuery);
 			stmt.setString(1, funcionario.getNm_funcionario());
 			stmt.setDouble(2, funcionario.getSl_funcionario());
+			stmt.setString(3, funcionario.getTp_funcionario().toString());
 			stmt.execute();
 			
 			this.conexao.commit();
