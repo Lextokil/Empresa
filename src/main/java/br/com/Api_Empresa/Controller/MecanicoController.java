@@ -27,7 +27,7 @@ public class MecanicoController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Mecanico> listChamados() {
+	public List<Mecanico> listMecanicos() {
 		try {
 			MecanicoDAO MecanicoDAO = new MecanicoDAO();
 			return MecanicoDAO.listar();

@@ -26,7 +26,7 @@ public class GerenteController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Gerente> listChamados() {
+	public List<Gerente> listGerentes() {
 		try {
 			GerenteDAO GerenteDAO = new GerenteDAO();
 			return GerenteDAO.listar();

@@ -26,7 +26,7 @@ public class FuncionarioController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Funcionario> listChamados() {
+	public List<Funcionario> listFuncionarios() {
 		try {
 			FuncionarioDAO FuncionarioDAO = new FuncionarioDAO();
 			return FuncionarioDAO.listar();
