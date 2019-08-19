@@ -25,7 +25,7 @@ public class ProgramadorController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/")
-	public List<Programador> listChamados() {
+	public List<Programador> listProgramadores() {
 		try {
      			ProgramadorDAO ProgramadorDAO = new ProgramadorDAO();
 			return ProgramadorDAO.listar();
